@@ -5,5 +5,8 @@ CREATE DATABASE IF NOT EXISTS db_sil_marvel;
 CREATE TABLE IF NOT EXISTS db_sil_marvel.char_stats_day_dly
 USING parquet
 OPTIONS (
-  path '/home/jovyan/work/digital/target/char_stats.parquet'
+  path '/home/jovyan/work/digital/target/char_stats'
 );
+
+
+refresh table db_sil_marvel.char_stats_day_dly;

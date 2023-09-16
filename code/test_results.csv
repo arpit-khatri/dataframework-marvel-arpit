@@ -1,0 +1,3 @@
+Test Case,Status,Timestamp
+__main__.TestCharStats.test_primary_key,Fail,2023-09-16 10:12:26.754437
+Test 1,Pass,2023-09-16 10:12:26.754461
