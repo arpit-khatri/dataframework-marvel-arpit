@@ -1,6 +1,7 @@
 #Data Pipeline
 input_path: /home/jovyan/work/digital/source
 output_path: /home/jovyan/work/digital/target
+log_path: /home/jovyan/work/digital/logs
 
 # Database configuration
 database:

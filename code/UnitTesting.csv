@@ -1,0 +1,13 @@
+Table Name,Test Name,Status,Reason,Timestamp
+char_stats_day_dly,name data_type,PASS,,2023-09-16 21:35:26.124067
+char_stats_day_dly,characterID data_type,PASS,,2023-09-16 21:35:26.124078
+char_stats_day_dly,Alignment data_type,PASS,,2023-09-16 21:35:26.124082
+char_stats_day_dly,Intelligence data_type,PASS,,2023-09-16 21:35:26.124084
+char_stats_day_dly,Strength data_type,PASS,,2023-09-16 21:35:26.124087
+char_stats_day_dly,Speed data_type,PASS,,2023-09-16 21:35:26.124090
+char_stats_day_dly,Durability data_type,PASS,,2023-09-16 21:35:26.124093
+char_stats_day_dly,Power data_type,PASS,,2023-09-16 21:35:26.124100
+char_stats_day_dly,Combat data_type,PASS,,2023-09-16 21:35:26.124104
+char_stats_day_dly,Total data_type,PASS,,2023-09-16 21:35:26.124108
+char_stats_day_dly,batch_id data_type,PASS,,2023-09-16 21:35:26.124111
+char_stats_day_dly,load_date data_type,PASS,,2023-09-16 21:35:26.124114
