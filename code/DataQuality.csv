@@ -1,3 +1,3 @@
 Table Name,Test Name,Status,Reason,Timestamp
-char_stats_day_dly,test_count_increase,PASS,Count_increase percentage is below threshold,2023-09-16 21:39:17.647695
-char_stats_day_dly,test_primary_key,FAIL,total of 1 Duplicate primary key values found.,2023-09-16 21:39:19.118378
+char_stats_day_dly,test_count_increase,PASS,Count_increase percentage is below threshold,2023-09-16 22:33:43.611984
+char_stats_day_dly,test_primary_key,FAIL,total of 1 Duplicate primary key values found.,2023-09-16 22:33:46.184026

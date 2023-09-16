@@ -1,7 +1,3 @@
 Table Name,Status,Test Type,Date
 char_stats_day_dly,PASS,UnitTesting,2023-09-16
-char_stats_day_dly,PASS,UnitTesting,2023-09-16
-char_stats_day_dly,test_primary_key,Data Quality Checks,2023-09-16
-char_stats_day_dly,test_primary_key,Data Quality Checks,2023-09-16
-char_stats_day_dly,test_primary_key,Data Quality Checks,2023-09-16
 char_stats_day_dly,test_primary_key,Data Quality Checks,2023-09-16
