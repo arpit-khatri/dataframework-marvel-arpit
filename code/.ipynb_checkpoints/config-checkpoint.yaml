@@ -2,3 +2,17 @@ input_path: /home/jovyan/work/digital/source
 
 output_path: /home/jovyan/work/digital/target
 
+# Database configuration
+database:
+  table_name: db_sil_marvel.char_stats_day_dly
+
+# Spark configuration
+spark:
+  app_name: UnitTest
+
+# unit testing
+table_name: db_sil_marvel.char_stats_day_dly
+primary_key_columns:
+  - characterID
+  - name
+threshold_percentage: 10
