@@ -1,6 +1,0 @@
-pip install pandas
-pip install pyspark
-pip install pyyaml
-
-pip install soda
-pip install soda-sql
