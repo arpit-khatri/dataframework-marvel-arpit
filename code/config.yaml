@@ -1,13 +1,17 @@
 #Data Pipeline
 input_path: /home/jovyan/work/digital/source
 output_path: /home/jovyan/work/digital/target
-log_path: /home/jovyan/work/digital/logs
+log_path: /home/jovyan/work/digital/logs/
+
+source_file1: characters.csv
+source_file2: characters_stats.csv
 
 # Database configuration
 database:
   table_name: db_sil_marvel.char_stats_day_dly
 
 # unit testing
+monitoring_path: /home/jovyan/work/digital/monitoring
 table_name: db_sil_marvel.char_stats_day_dly
 primary_key_columns:
   - characterID

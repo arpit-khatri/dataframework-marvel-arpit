@@ -1,18 +1,44 @@
+#Data Pipeline
 input_path: /home/jovyan/work/digital/source
-
 output_path: /home/jovyan/work/digital/target
+log_path: /home/jovyan/work/digital/logs/
+
+source_file1: characters.csv
+source_file2: characters_stats.csv
 
 # Database configuration
 database:
   table_name: db_sil_marvel.char_stats_day_dly
 
-# Spark configuration
-spark:
-  app_name: UnitTest
-
 # unit testing
+monitoring_path: /home/jovyan/work/digital/monitoring
 table_name: db_sil_marvel.char_stats_day_dly
 primary_key_columns:
   - characterID
   - name
 threshold_percentage: 10
+table_name: char_stats_day_dly
+columns:
+  - {name: name, type: string}
+  - {name: characterID, type: int}
+  - {name: Alignment, type: string}
+  - {name: Intelligence, type: int}
+  - {name: Strength, type: int}
+  - {name: Speed, type: int}
+  - {name: Durability, type: int}
+  - {name: Power, type: int}
+  - {name: Combat, type: int}
+  - {name: Total, type: int}
+  - {name: batch_id, type: string}
+  - {name: load_date, type: string}
+
+
+# Spark configuration
+spark:
+  app_name: UnitTest
+
+
+
+
+
+
