@@ -1,7 +1,0 @@
-2023-09-17 12:43:27,407 - INFO - Input Path: /home/jovyan/work/digital/source
-2023-09-17 12:43:27,408 - INFO - Output Path: /home/jovyan/work/digital/target
-2023-09-17 12:43:30,403 - INFO - Reading characters.csv.
-2023-09-17 12:43:34,292 - INFO - Reading characters_stats.csv.
-2023-09-17 12:43:34,936 - INFO - Joining character and Character Stats DataFrames.
-2023-09-17 12:43:34,961 - INFO - Adding audit columns.
-2023-09-17 12:43:35,002 - INFO - Saving DataFrame to Parquet file.

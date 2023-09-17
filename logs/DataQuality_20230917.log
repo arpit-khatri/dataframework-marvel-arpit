@@ -1,53 +1,16 @@
-2023-09-17 14:53:34,923 - INFO - Starting the data quality check to monitor count_increase in today's load.
-2023-09-17 14:53:37,730 - INFO - Loaded data from yesterday data from table char_stats_day_dly for count comparison.
-2023-09-17 14:53:39,389 - INFO - Count increase test passed: Count increase percentage is below threshold (10%)
-2023-09-17 14:53:39,391 - INFO - Completed the data check for count_increase in today's load.
-2023-09-17 14:53:39,392 - INFO - Starting the process to to test primary_key duplicate check.
-2023-09-17 14:53:39,885 - INFO - Loaded today's data from char_stats_day_dly.
-2023-09-17 14:53:41,030 - WARNING - Primary key test failed: Total of 1 duplicate primary key values found
-2023-09-17 14:53:41,031 - INFO - Completed the Primary key duplicate test.
-2023-09-17 14:53:41,056 - INFO - Starting the function to log the job satsus in daily_log_status table.
-2023-09-17 14:53:41,077 - INFO - Saved test results of  DataQuality table.
-2023-09-17 14:53:42,519 - INFO - Displayed Data Quality results.
-2023-09-17 14:53:43,446 - INFO - Load status remains as PASS.
-2023-09-17 14:53:44,710 - INFO - Appended load status to existing load_status table.
-2023-09-17 14:53:44,712 - INFO - Completed the daily_log_status
-2023-09-17 14:53:44,713 - INFO - Data Quality Job completed successfully.
-2023-09-17 14:53:44,716 - INFO - Closing down clientserver connection
-2023-09-17 14:56:46,145 - INFO - Starting the data quality check to monitor count_increase in today's load.
-2023-09-17 14:56:48,823 - INFO - Loaded data from yesterday data from table char_stats_day_dly for count comparison.
-2023-09-17 14:56:50,405 - INFO - Count increase test passed: Count increase percentage is below threshold (10%)
-2023-09-17 14:56:50,406 - INFO - Completed the data check for count_increase in today's load.
-2023-09-17 14:56:50,407 - INFO - Starting the process to to test primary_key duplicate check.
-2023-09-17 14:56:50,862 - INFO - Loaded today's data from char_stats_day_dly.
-2023-09-17 14:56:52,052 - WARNING - Primary key test failed: Total of 1 duplicate primary key values found
-2023-09-17 14:56:52,053 - INFO - Completed the Primary key duplicate test.
-2023-09-17 14:56:52,078 - INFO - Starting the function to log the job satsus in daily_log_status table.
-2023-09-17 14:56:52,099 - INFO - Saved test results of  DataQuality table.
-2023-09-17 14:56:53,507 - INFO - Displayed Data Quality results.
-2023-09-17 14:56:54,122 - INFO - Load status remains as PASS.
-2023-09-17 14:56:55,296 - INFO - Appended load status to existing load_status table.
-2023-09-17 14:56:55,297 - INFO - Completed the daily_log_status
-2023-09-17 14:56:55,297 - INFO - Data Quality Job completed successfully.
-2023-09-17 14:56:55,300 - INFO - Closing down clientserver connection
-2023-09-17 15:30:29,304 - INFO - Starting the data quality check to monitor count_increase in today's load.
-2023-09-17 15:30:32,044 - INFO - Loaded data from yesterday data from table char_stats_day_dly for count comparison.
-2023-09-17 15:30:33,658 - INFO - Count increase test passed: Count increase percentage is below threshold (10%)
-2023-09-17 15:30:33,659 - INFO - Completed the data check for count_increase in today's load.
-2023-09-17 15:30:33,663 - INFO - Starting the process to to test primary_key duplicate check.
-2023-09-17 15:30:34,419 - INFO - Loaded today's data from char_stats_day_dly.
-2023-09-17 15:30:36,548 - WARNING - Primary key test failed: Total of 1 duplicate primary key values found
-2023-09-17 15:30:36,549 - INFO - Completed the Primary key duplicate test.
-2023-09-17 15:30:36,570 - INFO - Starting the function to log the job satsus in daily_log_status table.
-2023-09-17 15:30:36,588 - INFO - Saved test results of  DataQuality table.
-2023-09-17 15:30:39,223 - INFO - Displayed Data Quality results.
-2023-09-17 15:30:40,199 - INFO - Load status remains as PASS.
-2023-09-17 15:30:41,424 - INFO - Appended load status to existing load_status table.
-2023-09-17 15:30:41,425 - INFO - Completed the daily_log_status
-2023-09-17 15:30:41,426 - INFO - Data Quality Job completed successfully.
-2023-09-17 15:37:15,604 - ERROR - No such comm target registered: jupyter.widget.control
-2023-09-17 15:37:15,613 - WARNING - No such comm: f7bd0ed4-85d4-4baa-a79c-149a72c5fdbf
-2023-09-17 15:52:06,288 - ERROR - No such comm target registered: jupyter.widget.control
-2023-09-17 15:52:06,318 - WARNING - No such comm: a24ea7ac-c356-44d7-813f-bae08d91e70c
-2023-09-17 16:59:58,856 - ERROR - No such comm target registered: jupyter.widget.control
-2023-09-17 16:59:58,862 - WARNING - No such comm: bb01bfaa-7c38-49f0-b1a7-a2c748dd4530
+2023-09-17 18:14:53,728 - INFO - Starting the data quality check to monitor count_increase in today's load.
+2023-09-17 18:14:56,572 - INFO - Loaded data from yesterday data from table char_stats_day_dly for count comparison.
+2023-09-17 18:14:58,297 - INFO - Count increase test passed: Count increase percentage is below threshold (10%)
+2023-09-17 18:14:58,298 - INFO - Completed the data check for count_increase in today's load.
+2023-09-17 18:14:58,299 - INFO - Starting the process to to test primary_key duplicate check.
+2023-09-17 18:14:58,759 - INFO - Loaded today's data from char_stats_day_dly.
+2023-09-17 18:15:00,006 - WARNING - Primary key test failed: Total of 1 duplicate primary key values found
+2023-09-17 18:15:00,008 - INFO - Completed the Primary key duplicate test.
+2023-09-17 18:15:00,033 - INFO - Starting the function to log the job satsus in daily_log_status table.
+2023-09-17 18:15:00,067 - INFO - Saved test results of  DataQuality table.
+2023-09-17 18:15:01,503 - INFO - Displayed Data Quality results.
+2023-09-17 18:15:02,234 - INFO - Load status remains as PASS.
+2023-09-17 18:15:03,557 - INFO - Appended load status to existing load_status table.
+2023-09-17 18:15:03,558 - INFO - Completed the daily_log_status
+2023-09-17 18:15:03,559 - INFO - Data Quality Job completed successfully.
+2023-09-17 18:15:03,563 - INFO - Closing down clientserver connection
