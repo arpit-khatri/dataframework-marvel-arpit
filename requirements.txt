@@ -1,7 +1,3 @@
-pip install pandas
-pip install pyspark
-pip install pyyaml
-
-pip install psycopg2-binary
-pip install soda
-pip install soda-sql
+pyyaml
+psycopg2-binary
+soda
