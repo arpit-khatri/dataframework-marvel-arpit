@@ -18,3 +18,12 @@
 2023-09-17 14:56:22,627 - INFO - Completed updating the daily_log_status for today's job status.
 2023-09-17 14:56:22,628 - INFO - UnitTesting Job completed successfully.
 2023-09-17 14:56:22,631 - INFO - Closing down clientserver connection
+2023-09-17 15:28:44,162 - INFO - Starting the Unit Testing to match columns and datatypes.
+2023-09-17 15:28:47,008 - INFO - Loaded data from char_stats_day_dly.
+2023-09-17 15:28:47,027 - INFO - Unit Testing to match columns and datatype.
+2023-09-17 15:28:47,051 - INFO - Starting the function to log the job satsus in daily_log_status table.
+2023-09-17 15:28:47,075 - INFO - Saved test results to UnitTest table.
+2023-09-17 15:28:49,056 - INFO - Creating a dataframe which will have daily_log_status.
+2023-09-17 15:28:51,711 - INFO - Appended the today's load status to table load_status.
+2023-09-17 15:28:51,711 - INFO - Completed updating the daily_log_status for today's job status.
+2023-09-17 15:28:51,712 - INFO - UnitTesting Job completed successfully.

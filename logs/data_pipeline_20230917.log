@@ -37,3 +37,183 @@
 2023-09-17 12:58:03,533 - INFO - Closing down clientserver connection
 2023-09-17 12:58:47,597 - ERROR - No such comm target registered: jupyter.widget.control
 2023-09-17 12:58:47,605 - WARNING - No such comm: 1fe31421-60a2-4703-ba15-0add76d05e74
+2023-09-17 15:33:26,608 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 15:33:26,610 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 15:33:29,665 - INFO - Reading characters.csv.
+2023-09-17 15:33:33,203 - INFO - Reading characters_stats.csv.
+2023-09-17 15:33:33,770 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 15:33:33,791 - INFO - Adding audit columns.
+2023-09-17 15:33:33,823 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 15:33:34,224 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-09-17 15:33:34,225 - INFO - NumExpr defaulting to 8 threads.
+2023-09-17 15:33:38,336 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 15:33:38,338 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 15:33:38,339 - ERROR - Error: [Errno 2] No such file or directory: 'modelling.sql'
+2023-09-17 15:34:15,746 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 15:34:15,747 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 15:34:15,756 - INFO - Reading characters.csv.
+2023-09-17 15:34:16,280 - INFO - Reading characters_stats.csv.
+2023-09-17 15:34:16,783 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 15:34:16,799 - INFO - Adding audit columns.
+2023-09-17 15:34:16,813 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 15:34:19,062 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 15:34:19,065 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 15:34:19,067 - ERROR - Error: [Errno 2] No such file or directory: 'modelling.sql'
+2023-09-17 15:35:04,544 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 15:35:04,545 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 15:35:09,676 - INFO - Reading characters.csv.
+2023-09-17 15:35:14,749 - INFO - Reading characters_stats.csv.
+2023-09-17 15:35:15,863 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 15:35:15,895 - INFO - Adding audit columns.
+2023-09-17 15:35:15,944 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 15:35:16,235 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-09-17 15:35:16,236 - INFO - NumExpr defaulting to 8 threads.
+2023-09-17 15:35:20,432 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 15:35:20,432 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 15:35:20,437 - INFO - Removing if any empty statements in the modelling sql.
+2023-09-17 15:35:21,222 - INFO - Table created Successfully
+2023-09-17 15:35:21,223 - INFO - Describing the table.
+2023-09-17 15:35:21,303 - INFO - Displaying the first 5 rows of the table.
+2023-09-17 15:35:21,881 - INFO - Running data analytics query.
+2023-09-17 15:35:22,640 - INFO - Data pipeline completed successfully
+2023-09-17 15:35:22,644 - INFO - Closing down clientserver connection
+2023-09-17 15:35:49,220 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 15:35:49,221 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 15:35:49,228 - INFO - Reading characters.csv.
+2023-09-17 15:35:49,752 - INFO - Reading characters_stats.csv.
+2023-09-17 15:35:50,217 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 15:35:50,235 - INFO - Adding audit columns.
+2023-09-17 15:35:50,270 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 15:35:53,053 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 15:35:53,055 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 15:35:53,057 - ERROR - Error: [Errno 2] No such file or directory: 'modelling.sql'
+2023-09-17 15:36:07,849 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 15:36:07,850 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 15:36:10,721 - INFO - Reading characters.csv.
+2023-09-17 15:36:14,451 - INFO - Reading characters_stats.csv.
+2023-09-17 15:36:14,991 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 15:36:15,015 - INFO - Adding audit columns.
+2023-09-17 15:36:15,048 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 15:36:15,257 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-09-17 15:36:15,258 - INFO - NumExpr defaulting to 8 threads.
+2023-09-17 15:36:18,765 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 15:36:18,766 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 15:36:18,768 - ERROR - Error: [Errno 2] No such file or directory: 'modelling.sql'
+2023-09-17 15:36:18,776 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 15:36:18,781 - WARNING - No such comm: 22a62724-56e1-420f-84a9-a534c427842b
+2023-09-17 15:36:24,359 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 15:36:24,360 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 15:36:24,367 - INFO - Reading characters.csv.
+2023-09-17 15:36:24,775 - INFO - Reading characters_stats.csv.
+2023-09-17 15:36:25,186 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 15:36:25,199 - INFO - Adding audit columns.
+2023-09-17 15:36:25,217 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 15:36:28,044 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 15:36:28,044 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 15:36:28,047 - ERROR - Error: [Errno 2] No such file or directory: 'modelling.sql'
+2023-09-17 15:39:56,845 - ERROR - Error: config.yaml file not found.
+2023-09-17 15:39:56,846 - ERROR - Configuration not loaded. Please check the YAML file and its location.
+2023-09-17 15:39:56,847 - ERROR - Error: 'NoneType' object is not subscriptable
+2023-09-17 15:39:56,858 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 15:39:56,864 - WARNING - No such comm: ee32191c-ce3f-450c-8ad8-0454f3f737d9
+2023-09-17 15:40:19,086 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 15:40:19,105 - WARNING - No such comm: 08361dc1-52f6-4a43-86a0-ea0423c9eca4
+2023-09-17 15:40:37,812 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 15:40:37,825 - WARNING - No such comm: e83cbcd5-fec4-4723-b65d-8a6713f71a5d
+2023-09-17 15:41:05,626 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 15:41:05,627 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 15:41:08,649 - INFO - Reading characters.csv.
+2023-09-17 15:41:12,536 - INFO - Reading characters_stats.csv.
+2023-09-17 15:41:13,175 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 15:41:13,201 - INFO - Adding audit columns.
+2023-09-17 15:41:13,236 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 15:41:13,440 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-09-17 15:41:13,441 - INFO - NumExpr defaulting to 8 threads.
+2023-09-17 15:41:17,032 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 15:41:17,032 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 15:41:17,037 - INFO - Removing if any empty statements in the modelling sql.
+2023-09-17 15:41:17,995 - INFO - Table created Successfully
+2023-09-17 15:41:17,996 - INFO - Describing the table.
+2023-09-17 15:41:18,065 - INFO - Displaying the first 5 rows of the table.
+2023-09-17 15:41:18,847 - INFO - Running data analytics query.
+2023-09-17 15:41:19,753 - INFO - Data pipeline completed successfully
+2023-09-17 15:41:19,763 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 15:41:19,767 - WARNING - No such comm: 2c7c5986-9cd9-47da-8797-8016f13200cb
+2023-09-17 15:42:34,738 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 15:42:34,739 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 15:42:37,750 - INFO - Reading characters.csv.
+2023-09-17 15:42:41,457 - INFO - Reading characters_stats.csv.
+2023-09-17 15:42:42,067 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 15:42:42,091 - INFO - Adding audit columns.
+2023-09-17 15:42:42,125 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 15:42:42,337 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-09-17 15:42:42,339 - INFO - NumExpr defaulting to 8 threads.
+2023-09-17 15:42:45,961 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 15:42:45,962 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 15:42:45,969 - INFO - Removing if any empty statements in the modelling sql.
+2023-09-17 15:42:47,007 - INFO - Table created Successfully
+2023-09-17 15:42:47,008 - INFO - Describing the table.
+2023-09-17 15:42:47,088 - INFO - Displaying the first 5 rows of the table.
+2023-09-17 15:42:47,875 - INFO - Running data analytics query.
+2023-09-17 15:42:48,784 - INFO - Data pipeline completed successfully
+2023-09-17 15:42:48,794 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 15:42:48,800 - WARNING - No such comm: 5c3529cd-8de2-4f6b-ab6f-d9f14737521b
+2023-09-17 15:44:03,924 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 15:44:03,926 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 15:44:06,611 - INFO - Reading characters.csv.
+2023-09-17 15:44:10,188 - INFO - Reading characters_stats.csv.
+2023-09-17 15:44:10,842 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 15:44:10,867 - INFO - Adding audit columns.
+2023-09-17 15:44:10,904 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 15:44:11,134 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-09-17 15:44:11,135 - INFO - NumExpr defaulting to 8 threads.
+2023-09-17 15:44:15,296 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 15:44:15,297 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 15:44:15,309 - INFO - Removing if any empty statements in the modelling sql.
+2023-09-17 15:44:16,496 - INFO - Table created Successfully
+2023-09-17 15:44:16,497 - INFO - Describing the table.
+2023-09-17 15:44:16,574 - INFO - Displaying the first 5 rows of the table.
+2023-09-17 15:44:17,461 - INFO - Running data analytics query.
+2023-09-17 15:44:18,289 - INFO - Data pipeline completed successfully
+2023-09-17 15:44:18,291 - INFO - Closing down clientserver connection
+2023-09-17 15:52:06,289 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 15:52:06,306 - WARNING - No such comm: d07ef783-9847-4bdf-b80f-8015aed11859
+2023-09-17 16:59:58,879 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 16:59:58,884 - WARNING - No such comm: c08bc819-128b-40a0-87f1-5540440efc4b
+2023-09-17 18:00:05,185 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 18:00:05,197 - WARNING - No such comm: 39fba00f-eef9-43d9-baa9-e6cbf79d9479
+2023-09-17 18:00:09,928 - ERROR - Error: config.yaml file not found.
+2023-09-17 18:00:09,929 - ERROR - Configuration not loaded. Please check the YAML file and its location.
+2023-09-17 18:00:09,930 - ERROR - Error: 'NoneType' object is not subscriptable
+2023-09-17 18:02:30,242 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 18:02:30,245 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 18:02:33,799 - INFO - Reading characters.csv.
+2023-09-17 18:02:37,455 - INFO - Reading characters_stats.csv.
+2023-09-17 18:02:38,051 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 18:02:38,076 - INFO - Adding audit columns.
+2023-09-17 18:02:38,109 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 18:02:38,331 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-09-17 18:02:38,332 - INFO - NumExpr defaulting to 8 threads.
+2023-09-17 18:02:42,394 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 18:02:42,395 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 18:02:42,401 - INFO - Removing if any empty statements in the modelling sql.
+2023-09-17 18:02:43,146 - INFO - Table created Successfully
+2023-09-17 18:02:43,146 - INFO - Describing the table.
+2023-09-17 18:02:43,238 - INFO - Displaying the first 5 rows of the table...
+2023-09-17 18:02:43,954 - INFO - Running data analytics query.
+2023-09-17 18:02:44,740 - INFO - Data pipeline completed successfully
+2023-09-17 18:02:44,776 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 18:02:44,778 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 18:02:44,784 - INFO - Reading characters.csv.
+2023-09-17 18:02:45,264 - INFO - Reading characters_stats.csv.
+2023-09-17 18:02:45,756 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 18:02:45,767 - INFO - Adding audit columns.
+2023-09-17 18:02:45,788 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 18:02:48,768 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 18:02:48,769 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 18:02:48,780 - INFO - Removing if any empty statements in the modelling sql.
+2023-09-17 18:02:49,029 - INFO - Table created Successfully
+2023-09-17 18:02:49,029 - INFO - Describing the table.
+2023-09-17 18:02:49,055 - INFO - Displaying the first 5 rows of the table...
+2023-09-17 18:02:49,679 - INFO - Running data analytics query.
+2023-09-17 18:02:50,175 - INFO - Data pipeline completed successfully

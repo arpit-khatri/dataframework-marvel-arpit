@@ -45,12 +45,13 @@ if __name__ == "__main__":
             output_path = config.get('output_path')
             log_path = config.get('log_path')
             table_name = config.get('table_name')
+            logging_path = config["log_path"]
             source_file1 = config.get('source_file1')
             source_file2 = config.get('source_file2')
 
             # Initialize the logger with the log_path from config
             #print(f"log path is :{log_path}")
-            #init_logger(log_path)
+            init_logger(logging_path)
 
             # Logging input and output paths
             logging.info(f"Input Path: {input_path}")
