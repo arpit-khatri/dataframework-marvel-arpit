@@ -26,7 +26,7 @@ To run the Data Pipeline Job, follow these steps:
 1. Update the `config.yaml` file with the appropriate configuration parameters.
 2. Run the following command to execute the Data Pipeline Job:
 
-   python data_pipeline.py
+   python DataPipeline.py
 
 
 ## Unit Testing Job
