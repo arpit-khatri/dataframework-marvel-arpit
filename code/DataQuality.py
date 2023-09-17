@@ -91,17 +91,20 @@ if __name__ == '__main__':
    # Create a Spark session
     spark = SparkSession.builder.appName("DataQuality").getOrCreate()
     
-    schema = ["Table Name", "Status", "Test Type", "Date"]
+    schema = ["Table Name", "Test Type", "Status", "Reason", "Date"]
     # Converting the test results to spark dataframe
     results_df = pd.DataFrame(test_results)
     results_df.to_csv("DataQuality.csv", index=False)
     # Write the individual Data Quality results to a CSV file
     data_quality_df = spark.createDataFrame(results_df, schema=schema) 
-    
+    data_quality_df.show()
     
      # Create a summary DataFrame to store load status
+    #load_status_df = data_quality_df.groupby("Table Name")\
+     #   .agg(F.max("Status").alias("Status"), F.lit("Data Quality Checks").alias("Test Type"), F.date_sub(F.current_date(), 1).alias("Date"))
     load_status_df = data_quality_df.groupby("Table Name")\
         .agg(F.max("Status").alias("Status"), F.lit("Data Quality Checks").alias("Test Type"), F.current_date().alias("Date"))
+
 
     # Check if any row in the test results DataFrame has "FAIL" in the "Status" column
     if "FAIL" in load_status_df.select("Status").distinct().rdd.map(lambda x: x[0].upper()).collect():

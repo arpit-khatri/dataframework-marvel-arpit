@@ -92,8 +92,8 @@ if __name__ == '__main__':
     #schema = ["Table Name", "Status", "Test Type", "Date"]
 
     UnitTest_df = spark.createDataFrame(results_df)
-    
-    
+    UnitTest_df.show(truncate=False)
+
      # Create a summary DataFrame to store load status
     load_status_df = UnitTest_df.groupby("Table Name")\
         .agg(F.max("Status").alias("Status"), F.lit("UnitTesting").alias("Test Type"), F.current_date().alias("Date"))
@@ -104,8 +104,6 @@ if __name__ == '__main__':
     
     # Define the file path for the load status CSV
     csv_file_path = "load_status"
-    load_status_df.show
-    
     # Check if the file already exists
     #if os.path.isfile(f"work/digital/logs/{csv_file_path}.csv"):
     if os.path.isfile(f"{csv_file_path}.csv"):
