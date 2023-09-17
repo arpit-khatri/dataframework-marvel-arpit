@@ -1,0 +1,39 @@
+2023-09-17 12:43:27,407 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 12:43:27,408 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 12:43:30,403 - INFO - Reading characters.csv.
+2023-09-17 12:43:34,292 - INFO - Reading characters_stats.csv.
+2023-09-17 12:43:34,936 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 12:43:34,961 - INFO - Adding audit columns.
+2023-09-17 12:43:35,002 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 12:43:35,355 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-09-17 12:43:35,356 - INFO - NumExpr defaulting to 8 threads.
+2023-09-17 12:43:39,676 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 12:43:39,678 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 12:43:39,690 - INFO - Removing if any empty statements in the modelling sql.
+2023-09-17 12:43:40,793 - INFO - Table created Successfully
+2023-09-17 12:43:40,794 - INFO - Describing the table.
+2023-09-17 12:43:40,884 - INFO - Displaying the first 5 rows of the table...
+2023-09-17 12:43:41,759 - INFO - Running data analytics query.
+2023-09-17 12:43:42,598 - INFO - Data pipeline completed successfully
+2023-09-17 12:51:40,082 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 12:51:40,095 - WARNING - No such comm: 22150bbe-e433-42ae-8793-96b6c3302384
+2023-09-17 12:57:48,914 - INFO - Input Path: /home/jovyan/work/digital/source
+2023-09-17 12:57:48,915 - INFO - Output Path: /home/jovyan/work/digital/target
+2023-09-17 12:57:51,896 - INFO - Reading characters.csv.
+2023-09-17 12:57:55,548 - INFO - Reading characters_stats.csv.
+2023-09-17 12:57:56,211 - INFO - Joining character and Character Stats DataFrames.
+2023-09-17 12:57:56,237 - INFO - Adding audit columns.
+2023-09-17 12:57:56,273 - INFO - Saving DataFrame to Parquet file.
+2023-09-17 12:57:56,502 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2023-09-17 12:57:56,503 - INFO - NumExpr defaulting to 8 threads.
+2023-09-17 12:58:00,637 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-17 12:58:00,638 - INFO - Reading and executing SQL statements from modelling script.
+2023-09-17 12:58:00,648 - INFO - Removing if any empty statements in the modelling sql.
+2023-09-17 12:58:01,717 - INFO - Table created Successfully
+2023-09-17 12:58:01,718 - INFO - Describing the table.
+2023-09-17 12:58:01,795 - INFO - Displaying the first 5 rows of the table.
+2023-09-17 12:58:02,680 - INFO - Running data analytics query.
+2023-09-17 12:58:03,531 - INFO - Data pipeline completed successfully
+2023-09-17 12:58:03,533 - INFO - Closing down clientserver connection
+2023-09-17 12:58:47,597 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-17 12:58:47,605 - WARNING - No such comm: 1fe31421-60a2-4703-ba15-0add76d05e74
