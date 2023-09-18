@@ -1,0 +1,5 @@
+2023-09-18 21:37:35,520 - INFO - Running the SQL Scripts: analytics.sql
+2023-09-18 21:37:35,520 - INFO - Reading and executing SQL statements from /home/jovyan/work/digital/code/modelling.sql.
+2023-09-18 21:37:40,495 - INFO - Reading and executing SQL statements from /home/jovyan/work/digital/code/analytics.sql.
+2023-09-18 21:37:46,203 - INFO - Data Analytics script completed successfully.
+2023-09-18 21:37:46,207 - INFO - Closing down clientserver connection

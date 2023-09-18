@@ -1,12 +1,12 @@
--- Create the database (if it doesn't exist)
-CREATE DATABASE IF NOT EXISTS db_sil_marvel;
+-- Creating the database (if it doesn't exist)
+CREATE DATABASE IF NOT EXISTS ${db_name};
 
--- Create a managed table from the Parquet file
-CREATE TABLE IF NOT EXISTS db_sil_marvel.char_stats_day_dly
+-- Creating a table from the Parquet file
+CREATE TABLE IF NOT EXISTS ${db_name}.${table_name}
 USING parquet
 OPTIONS (
-  path '/home/jovyan/work/digital/target/char_stats_day_dly/'
+  path '${parquet_path}'
 );
 
-
-refresh table db_sil_marvel.char_stats_day_dly;
+-- Refreshing the table
+refresh table ${db_name}.${table_name};

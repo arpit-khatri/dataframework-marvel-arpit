@@ -1,0 +1,13 @@
+2023-09-18 21:36:53,338 - INFO - Input Path is /home/jovyan/work/digital/source
+2023-09-18 21:36:53,339 - INFO - Target table Output Path is /home/jovyan/work/digital/target
+2023-09-18 21:36:58,152 - INFO - Reading characters.csv.
+2023-09-18 21:37:04,852 - INFO - Reading characters_stats.csv.
+2023-09-18 21:37:05,508 - INFO - Joining character and Character Stats DataFrames.
+2023-09-18 21:37:05,573 - INFO - Adding audit columns.
+2023-09-18 21:37:05,667 - INFO - Saving DataFrame to Parquet file.
+2023-09-18 21:37:08,601 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-18 21:37:08,602 - INFO - Running the SQL Script: modelling.sql
+2023-09-18 21:37:08,603 - INFO - Reading and executing SQL statements from /home/jovyan/work/digital/code/modelling.sql.
+2023-09-18 21:37:09,651 - INFO - Target Table db_sil_marvel.char_stats_day_dly created Successfully.
+2023-09-18 21:37:09,652 - INFO - Data pipeline completed successfully.
+2023-09-18 21:37:09,655 - INFO - Closing down clientserver connection
