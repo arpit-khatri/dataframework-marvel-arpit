@@ -14,9 +14,12 @@ database:
   ddl_script: modelling.sql
   analytics_script: analytics.sql
 
+# Monitoring
+monitoring_path: /home/jovyan/work/digital/monitoring
+load_status_table: load_daily_status
+teams_webhook_url: https://outlook.office.com/webhook/ENTER_WEBHOOK_URL_HERE
 
 # unit testing
-monitoring_path: /home/jovyan/work/digital/monitoring
 table_name: char_stats_day_dly
 primary_key_columns:
   - characterID

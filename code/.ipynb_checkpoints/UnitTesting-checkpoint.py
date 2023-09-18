@@ -5,13 +5,14 @@ import argparse
 import pandas as pd
 import os
 import logging
-from pyspark.sql import SparkSession
 
+from datetime import datetime as dt
+from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, upper
 from pyspark.sql.window import Window
 from pyspark.sql import functions as F
 
-# Function to initialize the logger with the date-appended log file name
+# Function which initialize the logger with the date-appended log file name
 def init_logger(log_path):
     os.makedirs(log_path, exist_ok=True)
     log_file_name = f"UnitTest_{datetime.datetime.now().strftime('%Y%m%d')}.log"
@@ -20,10 +21,6 @@ def init_logger(log_path):
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
-
-# Define command-line arguments
-# parser = argparse.ArgumentParser(description="Unit test script for Spark DataFrame schema and data validation")
-# parser.add_argument("--table_name", required=True, help="Path to the target table")
 
 class TestCharStats(unittest.TestCase):
     def __init__(self, *args, **kwargs):
@@ -44,6 +41,7 @@ class TestCharStats(unittest.TestCase):
         self.output_path = config["output_path"]
         self.log_path = config["monitoring_path"]
         self.logging_path = config["log_path"]
+        self.load_status_table = config["load_status_table"]
         self.absolute_table_name = f"{self.output_path}/{self.table_name}"
 
         # Initialize logger
@@ -65,24 +63,25 @@ class TestCharStats(unittest.TestCase):
 
     def test_column_data_types(self):
         try:
-            # Log the test start
+            # Logging the test start
             logging.info("Starting the Unit Testing to match columns and datatypes.")
 
             # Loading the current data
             df = self.spark.read.parquet(self.absolute_table_name)
             logging.info(f"Loaded data from {self.table_name}.")
 
-            # Check if column data types match the configuration
+            # Checking if column data types match the configuration
             for column_config in self.columns_config:
                 column_name = column_config["name"]
                 expected_data_type = column_config["type"]
                 actual_data_type = df.schema[column_name].dataType.simpleString()
                 if actual_data_type == expected_data_type:
-                    self.log_test_result(f"{column_name} data_type", "PASS")
+                    self.log_test_result(f"{column_name} data_type", "PASS", "Expected Datatype")
+                    
                 else:
                     self.log_test_result(f"{column_name} data_type", "FAIL", f"Expected {expected_data_type}, but got {actual_data_type}")
 
-            # Log the test end
+            # Logging the test end
             logging.info("Unit Testing to match columns and datatype.")
         except Exception as e:
             logging.error(f"Error in test_column_data_types: {str(e)}")
@@ -100,36 +99,41 @@ class TestCharStats(unittest.TestCase):
             # Creating a Spark session and converting the test results to a Spark DataFrame
             spark = SparkSession.builder.appName("UnitTest").getOrCreate()
             UnitTest_df = spark.createDataFrame(results_df)
+            print("Unit Test Table status update.")
             UnitTest_df.show(truncate=False)
             logging.info("Creating a dataframe which will have daily_log_status.")
 
             # Creating a summary DataFrame to store load status
-            load_status_df = UnitTest_df.groupby("Table Name") \
-                .agg(F.max("Status").alias("Status"), F.lit("UnitTest").alias("Test Type"), F.current_date().alias("Date"))
+            load_status_df = UnitTest_df \
+                .groupBy("Table Name") \
+                .agg(F.when(F.expr("array_contains(collect_list(Status), 'FAIL')"), "FAIL").otherwise("PASS").alias("Status")\
+                    ,F.lit("UnitTest").alias("Test Type"), F.current_date().alias("Date"))
+            
+            # Show the load_status_df
+            print("Load Daily Status table update.")
+            load_status_df.show()
 
             # Checking if any row in the test results DataFrame has "FAIL" in the "Status" column
             if "FAIL" in load_status_df.select("Status").distinct().rdd.map(lambda x: x[0].upper()).collect():
-                # Set the status in the summary DataFrame to "FAIL"
-                load_status_df = load_status_df.withColumn("Status", F.lit("FAIL"))
-                logging.info("Set load status to FAIL if any of the units test cases failed.")
+                logging.warning("Load status set to FAIL due to Unit Testing failures.")
 
-            # Define the file path for the load status CSV
-            csv_file_path = "load_status"
+            else:
+                logging.info("Load status remains as PASS.")
 
             # Check if the log file already exists
-            if os.path.isfile(f"{self.log_path}/{csv_file_path}.csv"):
+            if os.path.isfile(f"{self.log_path}/{self.load_status_table}.csv"):
                 # Reading the existing load status CSV directly
-                existing_load_status_df = spark.read.csv(f"{self.log_path}/{csv_file_path}.csv", header=True, inferSchema=True)
+                existing_load_status_df = spark.read.csv(f"{self.log_path}/{self.load_status_table}.csv", header=True, inferSchema=True)
                 final_load_status_df = existing_load_status_df.union(load_status_df).distinct()
                 final_load_status_dfp = final_load_status_df.toPandas()
-                final_load_status_dfp.to_csv(f"{self.log_path}/load_status.csv", index=False)
+                final_load_status_dfp.to_csv(f"{self.log_path}/{self.load_status_table}.csv", index=False)
                 logging.info(f"Appended the today's load status to table load_status.")
             else:
                 # if the file doesn't exist, creating it with the current load status
                 final_load_status_df = load_status_df
                 final_load_status_dfp = final_load_status_df.toPandas()
-                final_load_status_dfp.to_csv(f"{self.log_path}/load_status.csv", mode='a', index=False, header=not os.path.exists(f"{self.log_path}/load_status.csv"))
-                logging.info(f"Created {self.log_path}/load_status.csv with current load status")
+                final_load_status_dfp.to_csv(f"{self.log_path}/{self.load_status_table}.csv", mode='a', index=False, header=not os.path.exists(f"{self.log_path}/load_status.csv"))
+                logging.info(f"Created {self.log_path}/{self.load_status_table}.csv with current load status")
 
             # Log the daily status end
             logging.info("Completed updating the daily_log_status for today's job status.")
@@ -137,24 +141,28 @@ class TestCharStats(unittest.TestCase):
             logging.error(f"Error in daily_log_status: {str(e)}")
 
 if __name__ == '__main__':
-    # Creating an empty list to store test results
-    test_results = []
-    
-    # Creating a test suite
-    test_suite = unittest.TestLoader().loadTestsFromTestCase(TestCharStats)
+    try:
+        # Creating an empty list to store test results
+        test_results = []
 
-    # Running the tests
-    test_runner = unittest.TextTestRunner()
+        # Creating a test suite
+        test_suite = unittest.TestLoader().loadTestsFromTestCase(TestCharStats)
 
-    # Run each test and log the results
-    for test_case in test_suite:
-        test_result = test_runner.run(test_case)
+        # Running the tests
+        test_runner = unittest.TextTestRunner()
 
-    # Converting the test results to write into a file
-    results_df = pd.DataFrame(test_results)
+        # Run each test and log the results
+        for test_case in test_suite:
+            test_result = test_runner.run(test_case)
 
-    # Call the daily_log_status function with test_results as an argument
-    test_instance = TestCharStats()
-    test_instance.daily_log_status(results_df)
-    print("UnitTesting Job completed successfully.")
-    logging.info("UnitTesting Job completed successfully.")
+        # Converting the test results to write into a file
+        results_df = pd.DataFrame(test_results)
+
+        # Calling the daily_log_status function with test_results as an argument
+        test_instance = TestCharStats()
+        test_instance.daily_log_status(results_df)
+        logging.info("UnitTesting Job completed successfully.")
+    except Exception as e:
+        # Handling fatal errors
+        error_message = str(e)
+        logging.error(f"UnitTesting Job failed: {error_message}")

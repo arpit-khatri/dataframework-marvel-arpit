@@ -9,27 +9,27 @@ import yaml
 
 def init_logger(log_path):
     os.makedirs(log_path, exist_ok=True)
-    log_file_name = f"analytics_{dt.now().strftime('%Y%m%d')}.log"  # Include script name in the log file name
+    log_file_name = f"Analytics_{dt.now().strftime('%Y%m%d')}.log"  # Include script name in the log file name
     log_file_path = os.path.join(log_path, log_file_name)  # Full path to the log file
 
-    # Create a logger
+    # Creating a logger
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
-    # Create a single formatter for both the file handler and the console handler
+    # Creating a single formatter for both the file handler and the console handler
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
-    # Create a handler for writing log messages to a file
+    # Creating a handler for writing log messages to a file
     file_handler = logging.FileHandler(log_file_path)
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(formatter)
 
-    # Create a handler for writing log messages to the console
+    # Creating a handler for writing log messages to the console
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
     console_handler.setFormatter(formatter)
 
-    # Add the handlers to the logger
+    # Adding the handlers to the logger
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
@@ -133,4 +133,5 @@ if __name__ == "__main__":
         logging.info("Data Analytics script completed successfully.")
 
     except Exception as e:
-        logging.error(f"Error: {str(e)}", exc_info=True)
+        error_message = str(e)
+        logging.error(f"Data Analytics Job failed: {error_message}")

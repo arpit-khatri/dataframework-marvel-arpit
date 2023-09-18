@@ -1,0 +1,11 @@
+2023-09-18 21:46:02,673 - INFO - Starting the Unit Testing to match columns and datatypes.
+2023-09-18 21:46:06,436 - INFO - Loaded data from char_stats_day_dly.
+2023-09-18 21:46:06,465 - INFO - Unit Testing to match columns and datatype.
+2023-09-18 21:46:06,495 - INFO - Starting the function to log the job satsus in daily_log_status table.
+2023-09-18 21:46:06,512 - INFO - Saved test results to UnitTest table.
+2023-09-18 21:46:11,132 - INFO - Creating a dataframe which will have daily_log_status.
+2023-09-18 21:46:14,955 - INFO - Load status remains as PASS.
+2023-09-18 21:46:15,617 - INFO - Created /home/jovyan/work/digital/monitoring/load_daily_status.csv with current load status
+2023-09-18 21:46:15,617 - INFO - Completed updating the daily_log_status for today's job status.
+2023-09-18 21:46:15,618 - INFO - UnitTesting Job completed successfully.
+2023-09-18 21:46:15,620 - INFO - Closing down clientserver connection

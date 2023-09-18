@@ -8,27 +8,26 @@ import yaml
 
 def init_logger(log_path):
     os.makedirs(log_path, exist_ok=True)
-    log_file_name = f"data_pipeline_{dt.now().strftime('%Y%m%d')}.log"  # Include script name in the log file name
-    log_file_path = os.path.join(log_path, log_file_name)  # Full path to the log file
-
-    # Create a logger
+    log_file_name = f"DataPipeline_{dt.now().strftime('%Y%m%d')}.log"  
+    log_file_path = os.path.join(log_path, log_file_name)
+    # Creating a logger
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
-    # Create a single formatter for both the file handler and the console handler
+    # Creating a single formatter for both the file handler and the console handler
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
-    # Create a handler for writing log messages to a file
+    # Creating a handler for writing log messages to a file
     file_handler = logging.FileHandler(log_file_path)
     file_handler.setLevel(logging.INFO)
     file_handler.setFormatter(formatter)
 
-    # Create a handler for writing log messages to the console
+    # Creating a handler for writing log messages to the console
     console_handler = logging.StreamHandler()
     console_handler.setLevel(logging.INFO)
     console_handler.setFormatter(formatter)
 
-    # Add the handlers to the logger
+    # Adding the handlers to the logger
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
@@ -62,7 +61,7 @@ def execute_sql_script(sql_script_path, spark, db_name, table_name, parquet_path
         list: List of DataFrames containing the results of SQL statements.
     """
     try:
-        # Read and execute the SQL statements from the script
+        # Reading and executing the SQL statements from the script
         logging.info(f"Reading and executing SQL statements from {sql_script_path}.")
         with open(sql_script_path, "r") as script_file:
             script_content = script_file.read()  # Read the content of the file
@@ -92,7 +91,7 @@ def execute_sql_script(sql_script_path, spark, db_name, table_name, parquet_path
 if __name__ == "__main__":
     
     try:
-        # Read the configuration from config.yaml
+        # Reading the configuration from config.yaml
         config = read_config()
         
         if config:
@@ -156,4 +155,6 @@ if __name__ == "__main__":
         logging.info("Data pipeline completed successfully.")
 
     except Exception as e:
-        logging.error(f"Error: {str(e)}", exc_info=True)
+        # Handling fatal errors
+        error_message = str(e)
+        logging.error(f"DataPipeline Job failed: {error_message}")

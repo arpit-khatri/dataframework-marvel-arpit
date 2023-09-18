@@ -1,0 +1,3 @@
+Table Name,Status,Test Type,Date
+char_stats_day_dly,PASS,UnitTest,2023-09-18
+char_stats_day_dly,FAIL,DataQuality,2023-09-18
