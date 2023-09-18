@@ -2,15 +2,14 @@
 FROM jupyter/pyspark-notebook:latest
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /app/code
 
 # Copy your application code and configuration files to the container
 COPY ./code /app/code
 COPY ./monitoring /app/monitoring
 COPY ./source /app/source
 COPY ./logs /app/logs
-COPY ./requirements.txt /app
-COPY ./compose.yaml /app
+COPY ./requirements.txt /app/code
 
 # Install any additional Python dependencies (if needed)
 RUN pip install -r requirements.txt

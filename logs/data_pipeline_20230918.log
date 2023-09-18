@@ -1,0 +1,40 @@
+2023-09-18 15:41:55,455 - INFO - Input Path is /home/jovyan/work/digital/source
+2023-09-18 15:41:55,455 - INFO - Target table Output Path is /home/jovyan/work/digital/target
+2023-09-18 15:42:00,336 - INFO - Reading characters.csv.
+2023-09-18 15:42:07,154 - INFO - Reading characters_stats.csv.
+2023-09-18 15:42:07,842 - INFO - Joining character and Character Stats DataFrames.
+2023-09-18 15:42:07,910 - INFO - Adding audit columns.
+2023-09-18 15:42:07,998 - INFO - Saving DataFrame to Parquet file.
+2023-09-18 15:42:10,991 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-18 15:42:10,992 - INFO - Running the SQL Script: modelling.sql
+2023-09-18 15:42:10,993 - INFO - Reading and executing SQL statements from /home/jovyan/work/digital/code/modelling.sql.
+2023-09-18 15:42:11,970 - INFO - Target Table db_sil_marvel.char_stats_day_dly created Successfully.
+2023-09-18 15:42:11,971 - INFO - Data pipeline completed successfully.
+2023-09-18 15:42:11,974 - INFO - Closing down clientserver connection
+2023-09-18 15:42:24,125 - INFO - Input Path is /home/jovyan/work/digital/source
+2023-09-18 15:42:24,126 - INFO - Target table Output Path is /home/jovyan/work/digital/target
+2023-09-18 15:42:29,782 - INFO - Reading characters.csv.
+2023-09-18 15:42:37,503 - INFO - Reading characters_stats.csv.
+2023-09-18 15:42:38,184 - INFO - Joining character and Character Stats DataFrames.
+2023-09-18 15:42:38,278 - INFO - Adding audit columns.
+2023-09-18 15:42:38,397 - INFO - Saving DataFrame to Parquet file.
+2023-09-18 15:42:41,679 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-18 15:42:41,679 - INFO - Running the SQL Script: modelling.sql
+2023-09-18 15:42:41,680 - INFO - Reading and executing SQL statements from /home/jovyan/work/digital/code/modelling.sql.
+2023-09-18 15:42:42,963 - INFO - Target Table db_sil_marvel.char_stats_day_dly created Successfully.
+2023-09-18 15:42:42,964 - INFO - Data pipeline completed successfully.
+2023-09-18 15:42:42,967 - INFO - Closing down clientserver connection
+2023-09-18 15:45:17,499 - INFO - Input Path is /home/jovyan/work/digital/source
+2023-09-18 15:45:17,501 - INFO - Target table Output Path is /home/jovyan/work/digital/target
+2023-09-18 15:45:22,536 - INFO - Reading characters.csv.
+2023-09-18 15:45:30,193 - INFO - Reading characters_stats.csv.
+2023-09-18 15:45:30,899 - INFO - Joining character and Character Stats DataFrames.
+2023-09-18 15:45:30,959 - INFO - Adding audit columns.
+2023-09-18 15:45:31,047 - INFO - Saving DataFrame to Parquet file.
+2023-09-18 15:45:34,249 - INFO - DataFrame saved to Parquet file: /home/jovyan/work/digital/target
+2023-09-18 15:45:34,253 - INFO - Running the SQL Script: modelling.sql
+2023-09-18 15:45:34,254 - INFO - Reading and executing SQL statements from /home/jovyan/work/digital/code/modelling.sql.
+2023-09-18 15:45:35,274 - INFO - Target Table db_sil_marvel.char_stats_day_dly created Successfully.
+2023-09-18 15:45:35,276 - INFO - Data pipeline completed successfully.
+2023-09-18 15:45:35,299 - ERROR - No such comm target registered: jupyter.widget.control
+2023-09-18 15:45:35,309 - WARNING - No such comm: 92e4b7c3-9079-4f9f-b1dc-7c81646fdce0

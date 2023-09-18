@@ -2,13 +2,14 @@ import logging
 import os
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import lit, current_timestamp
+from pyspark.sql.functions import *
 import datetime
 from datetime import datetime as dt
 import yaml
 
 def init_logger(log_path):
     os.makedirs(log_path, exist_ok=True)
-    log_file_name = f"data_pipeline_{dt.now().strftime('%Y%m%d')}.log"  # Include script name in the log file name
+    log_file_name = f"analytics_{dt.now().strftime('%Y%m%d')}.log"  # Include script name in the log file name
     log_file_path = os.path.join(log_path, log_file_name)  # Full path to the log file
 
     # Create a logger
@@ -47,7 +48,7 @@ def read_config():
         logging.error(f"Error loading config.yaml: {e}")
         return None
 
-def execute_sql_script(sql_script_path, spark, db_name, table_name, parquet_path):
+def execute_sql_script(sql_script_path, spark, db_name, table_name, parquet_path ):
     """
     Executes SQL statements from a SQL script and return the results.
 
@@ -57,6 +58,7 @@ def execute_sql_script(sql_script_path, spark, db_name, table_name, parquet_path
         db_name (str): Name of the database.
         table_name (str): Name of the table.
         parquet_path (str): Path to the Parquet file.
+        script_name (str): Name of the script.
 
     Returns:
         list: List of DataFrames containing the results of SQL statements.
@@ -71,7 +73,6 @@ def execute_sql_script(sql_script_path, spark, db_name, table_name, parquet_path
             script_content = script_content.replace("${db_name}", db_name)
             script_content = script_content.replace("${table_name}", table_name)
             script_content = script_content.replace("${parquet_path}", parquet_path)
-
             sql_statements = script_content.split(";")
 
             # Remove any empty statements in the SQL script
@@ -83,77 +84,53 @@ def execute_sql_script(sql_script_path, spark, db_name, table_name, parquet_path
                 if statement:
                     result = spark.sql(statement)
                     results.append(result)
+                    
+                    # Check if script_name contains "analytics" to determine whether to show the result
+                    if "analytics" in sql_script_path:
+                        result.show(50,truncate=False)  # Display the result
+                        
             return results
 
     except Exception as e:
         logging.error(f"Error: {str(e)}", exc_info=True)
         return []
 
+
 if __name__ == "__main__":
-    
     try:
         # Read the configuration from config.yaml
         config = read_config()
-        
+
         if config:
             # Accessing the input_path from the config
-            input_path = config.get('input_path')
             output_path = config.get('output_path')
             logging_path = config.get('log_path')
             code_path = config.get('code_path')
-            source_file1 = config.get('source_file1')
-            source_file2 = config.get('source_file2')
             db_name = config.get('database')['db_name'] 
             table_name = config.get('database')['table_name']
             ddl_script = config.get('database')['ddl_script']
+            analytics_script = config.get('database')['analytics_script']
             parquet_path = os.path.join(output_path, table_name)
             
             # Initialize the logger with the log_path from config
-            #print(f"log path is :{log_path}")
             init_logger(logging_path)
 
-            # Logging input and output paths
-            logging.info(f"Input Path is {input_path}")
-            logging.info(f"Target table Output Path is {output_path}")
         else:
             logging.error("Configuration not loaded. Please check the YAML file and its location.")
  
         # Creating a Spark session with the configured app name
-        spark = SparkSession.builder.appName("DataPipeline").getOrCreate()
-
-        # Reading the Characters CSV file into a DataFrame
-        logging.info(f"Reading {source_file1}.")
-        df_char = spark.read.csv(os.path.join(input_path, source_file1), header=True, inferSchema=True)
-        
-        # Reading the Character Stats CSV file into a DataFrame
-        logging.info(f"Reading {source_file2}.")
-        df_stats = spark.read.csv(os.path.join(input_path, source_file2), header=True, inferSchema=True)
-        df_stats = df_stats.withColumnRenamed("Name","name")
-
-        # Joining the character & Character Stats files
-        logging.info("Joining character and Character Stats DataFrames.")
-        df_char_stats = df_char.join(df_stats, on="name", how="inner")
-
-        # Adding the audit columns
-        logging.info("Adding audit columns.")
-        df_char_stats = df_char_stats.withColumn("batch_id", lit("101"))
-        df_char_stats = df_char_stats.withColumn("load_date", current_timestamp().cast("string"))
-
-        # Saving the DataFrame to a Parquet file
-        logging.info("Saving DataFrame to Parquet file.")
-        df_char_stats.write.parquet(os.path.join(output_path, "char_stats_day_dly"), mode="overwrite")
-
-        # Print a message to confirm the file has been saved
-        logging.info(f"DataFrame saved to Parquet file: {output_path}")
+        spark = SparkSession.builder.appName("DataAnalytics").getOrCreate()
 
         # Defining the path to SQL script which will be used for creating Data Objects such as schema and tables
-        sql_script_path = os.path.join(code_path, ddl_script)
+        sql_ddl_script_path = os.path.join(code_path, ddl_script)
+        sql_analytics_script_path = os.path.join(code_path, analytics_script)
         
-        # Execute the DDL SQL script and get the results
-        logging.info(f"Running the SQL Script: {ddl_script}")
-        script_results = execute_sql_script(sql_script_path, spark, db_name, table_name, parquet_path)
-        logging.info(f"Target Table {db_name}.{table_name} created Successfully.")
-        logging.info("Data pipeline completed successfully.")
+        # Execute the SQL script and get the results
+        logging.info(f"Running the SQL Scripts: {analytics_script}")
+        script_results = execute_sql_script(sql_ddl_script_path, spark, db_name, table_name, parquet_path)
+        script_results = execute_sql_script(sql_analytics_script_path, spark, db_name, table_name, parquet_path)
+            
+        logging.info("Data Analytics script completed successfully.")
 
     except Exception as e:
         logging.error(f"Error: {str(e)}", exc_info=True)
