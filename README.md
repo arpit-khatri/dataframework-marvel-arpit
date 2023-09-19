@@ -26,15 +26,26 @@ To run the Data Pipeline Job, follow these steps:
 1. Update the `config.yaml` file with the appropriate configuration parameters.
 2. Run the following command to execute the Data Pipeline Job:
 
-   python DataPipeline.py
+         python DataPipeline.py
 
+
+## Data Analytics Job
+The Data Analytics Job is designed to enable users to perform data analytics using Spark SQL on a specified DataFrame. This job reads a configuration file (config.yaml) to determine the input parameters, including the SQL scripts to execute, the database and table information, and the output path for storing the results.
+Idead of this Analytics jobs is to show the analytics caplibility to the users that they can perform on this data framework solution.
+
+This job runs the Analytics SQL scripts analytics.sql and placed in the specified code_path. This sql scripts should contain the SQL statements for performing analytics.
+
+It also write the execution logs in the specified log directory (log_path). The logs will provide information about the script's progress, executed SQL statements, and any errors encountered duing the anlaytics query.
+
+Step to run Anlaytics job:
+      
+         python Analytics.py   
 
 ## Unit Testing Job
 
 The Unit Testing Job (`UnitTesting.py`) is an essential part of the data pipeline process. It runs once the table is created for today's load. The primary purpose of this job is to validate the quality of the data by performing unit tests.
 
 ### Unit Testing Process
-
 The Unit Testing Job performs the following steps:
 1. **Reading Configuration**: It reads the column names and expected data types for validation from the `config.yaml` file. This allows for flexibility in adapting to different data sources and structures.
 2. **Running Unit Tests**: Using the configuration parameters, the job executes unit tests to ensure data integrity. Specifically, it checks whether:
@@ -50,7 +61,7 @@ To execute the Unit Testing Job, follow these steps:
 1. Ensure that the main Data Pipeline Job has successfully completed its tasks, including creating the database and the external Spark SQL table.
 2. Run the Unit Testing Job using the following command:
 
-   python UnitTesting.py
+       python UnitTesting.py
 
 
 ## Data Quality Job
@@ -58,7 +69,6 @@ To execute the Unit Testing Job, follow these steps:
 The Data Quality Job (`DataQuality.py`) is a critical component of the data pipeline process that runs once the data load is complete for the current day. Its primary purpose is to ensure data quality by performing various data validation checks.
 
 ### Data Quality Validation Process
-
 The Data Quality Job executes the following data validation processes:
 1. **Reading Configuration**: It reads configuration parameters from the `config.yaml` file, including information about primary key columns, expected data count, and any other data quality checks.
 2. **Primary Key Check**: The job validates that there are no duplicate primary key values in the dataset. If duplicates are found, it logs an error and records the failure.
@@ -74,5 +84,22 @@ To execute the Data Quality Job, follow these steps:
 1. Ensure that the main Data Pipeline Job, including unit testing, has successfully completed its tasks.
 2. Run the Data Quality Job using the following command:
 
-   python DataQuality.py
+         python DataQuality.py
 
+## Monitoring Job
+The Monitoring Job is essential for keeping the Data Ops team informed about any issues with data quality and unit testing. 
+Data Quality Assurance and Timely Issue Resolution by doing the status reporting with the help Automation on daily load staus job.
+It reduces the need for manual intervention and ensuring consistent monitoring by performing these steps and sending notifications and plays a crucial role in maintaining data integrity and facilitating efficient data operations.
+
+Steps Performed:
+
+Read Configuration: The job reads the config.yaml file to obtain configuration parameters, including the path to the daily_load_status table and the Teams webhook URL.
+Check Unit Testing and Data Quality Status: It checks the status of unit testing and data quality results in the daily_load_status table.
+
+Send Teams Notifications:
+If any data quality test fails (indicated by "FAIL" status in the table), a notification is sent.
+If all tests pass successfully, a notification is sent to indicate successful load completion for today;s job.
+
+Step to run Monitoring job:
+
+      python Monitoring.py   
