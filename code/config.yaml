@@ -1,8 +1,8 @@
 #Data Pipeline
-code_path: /home/jovyan/work/digital/code
-input_path: /home/jovyan/work/digital/source
-output_path: /home/jovyan/work/digital/target
-log_path: /home/jovyan/work/digital/logs
+code_path: /app/code
+input_path: /app/source
+output_path: /app/target
+log_path: /app/logs
 
 source_file1: characters.csv
 source_file2: characters_stats.csv
@@ -15,7 +15,7 @@ database:
   analytics_script: analytics.sql
 
 # Monitoring
-monitoring_path: /home/jovyan/work/digital/monitoring
+monitoring_path: /app/monitoring
 load_status_table: load_daily_status
 teams_webhook_url: https://outlook.office.com/webhook/ENTER_WEBHOOK_URL_HERE
 
