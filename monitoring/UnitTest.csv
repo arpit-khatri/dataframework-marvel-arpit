@@ -1,13 +1,13 @@
 Table Name,Test Name,Status,Reason,Timestamp
-char_stats_day_dly,name data_type,PASS,,2023-09-17 18:13:24.002049
-char_stats_day_dly,characterID data_type,PASS,,2023-09-17 18:13:24.002059
-char_stats_day_dly,Alignment data_type,PASS,,2023-09-17 18:13:24.002063
-char_stats_day_dly,Intelligence data_type,PASS,,2023-09-17 18:13:24.002066
-char_stats_day_dly,Strength data_type,PASS,,2023-09-17 18:13:24.002069
-char_stats_day_dly,Speed data_type,PASS,,2023-09-17 18:13:24.002072
-char_stats_day_dly,Durability data_type,PASS,,2023-09-17 18:13:24.002075
-char_stats_day_dly,Power data_type,PASS,,2023-09-17 18:13:24.002082
-char_stats_day_dly,Combat data_type,PASS,,2023-09-17 18:13:24.002084
-char_stats_day_dly,Total data_type,PASS,,2023-09-17 18:13:24.002087
-char_stats_day_dly,batch_id data_type,PASS,,2023-09-17 18:13:24.002090
-char_stats_day_dly,load_date data_type,PASS,,2023-09-17 18:13:24.002092
+char_stats_day_dly,name data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465387
+char_stats_day_dly,characterID data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465403
+char_stats_day_dly,Alignment data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465408
+char_stats_day_dly,Intelligence data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465414
+char_stats_day_dly,Strength data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465418
+char_stats_day_dly,Speed data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465421
+char_stats_day_dly,Durability data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465425
+char_stats_day_dly,Power data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465433
+char_stats_day_dly,Combat data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465437
+char_stats_day_dly,Total data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465440
+char_stats_day_dly,batch_id data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465444
+char_stats_day_dly,load_date data_type,PASS,Expected Datatype,2023-09-18 21:46:06.465447
